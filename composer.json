@@ -2,23 +2,10 @@
   "name": "renatolovato/bannerslider-magento2",
   "description": "N/A",
   "type": "magento2-module",
-  "version": "1.7.1",
+  "version": "1.8.0",
   "license": [
     "OSL-3.0",
     "AFL-3.0"
-  ],
-  "authors": [
-    {
-      "name": "Blanka",
-      "email": "blanka@magestore.com",
-      "homepage": "https://www.magestore.com/",
-      "role": "Developer"
-    },
-    {
-      "name": "Renato",
-      "email": "renatolovato@gmail.com",
-      "role": "Developer"
-    }
   ],
   "autoload": {
     "files": [
