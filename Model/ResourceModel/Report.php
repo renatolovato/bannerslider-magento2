@@ -31,12 +31,15 @@ namespace Magestore\Bannerslider\Model\ResourceModel;
  */
 class Report extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {
+    const MAIN_TABLE_NAME = 'magestore_bannerslider_report';
+    const MAIN_TABLE_ID_FIELD_NAME = 'report_id';
+
     /**
      * construct
      * @return void
      */
     protected function _construct()
     {
-        $this->_init('magestore_bannerslider_report', 'report_id');
+        $this->_init(self::MAIN_TABLE_NAME, self::MAIN_TABLE_ID_FIELD_NAME);
     }
 }

@@ -31,12 +31,15 @@ namespace Magestore\Bannerslider\Model\ResourceModel;
  */
 class Banner extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {
+    const MAIN_TABLE_NAME = 'magestore_bannerslider_banner';
+    const MAIN_TABLE_ID_FIELD_NAME = 'banner_id';
+
     /**
      * construct
      * @return void
      */
     protected function _construct()
     {
-        $this->_init('magestore_bannerslider_banner', 'banner_id');
+        $this->_init(self::MAIN_TABLE_NAME, self::MAIN_TABLE_ID_FIELD_NAME);
     }
 }

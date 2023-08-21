@@ -31,6 +31,8 @@ namespace Magestore\Bannerslider\Controller\Adminhtml;
  */
 abstract class Report extends \Magestore\Bannerslider\Controller\Adminhtml\AbstractAction
 {
+    const PARAM_CRUD_ID = 'report_id';
+
     /**
      * Check if admin has permissions to visit related pages.
      *

@@ -31,12 +31,15 @@ namespace Magestore\Bannerslider\Model\ResourceModel;
  */
 class Slider extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {
+    const MAIN_TABLE_NAME = 'magestore_bannerslider_slider';
+    const MAIN_TABLE_ID_FIELD_NAME = 'slider_id';
+
     /**
      * construct
      * @return void
      */
     protected function _construct()
     {
-        $this->_init('magestore_bannerslider_slider', 'slider_id');
+        $this->_init(self::MAIN_TABLE_NAME, self::MAIN_TABLE_ID_FIELD_NAME);
     }
 }
