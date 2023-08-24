@@ -257,20 +257,16 @@ class Banner extends \Magento\Backend\Block\Widget\Form\Generic implements \Mage
             ]
         );
 
-        $dateFormat = 'M/d/yyyy';
-        $timeFormat = 'h:mm a';
+        $dateFormat = 'dd/MM/yyyy';
+        $timeFormat = 'HH:mm:ss';
         if($dataObj->hasData('start_time')) {
-
-            $datetime = $this->dateTime->date($dataObj->getData('start_time'), null, $this->_localeDate->getConfigTimezone());
-//            $datetime = new \DateTime($dataObj->getData('start_time'));
-
+            $datetime = $this->dateTime->date(strtotime($dataObj->getData('start_time')), null,  $this->_localeDate->getConfigTimezone());
             $dataObj->setData('start_time',$datetime);
 
         }
 
         if($dataObj->hasData('end_time')) {
-            $datetime = $this->dateTime->date($dataObj->getData('end_time'), null, $this->_localeDate->getConfigTimezone());
-//            $datetime = new \DateTime($dataObj->getData('end_time'));
+            $datetime = $this->dateTime->date(strtotime($dataObj->getData('end_time')), null, $this->_localeDate->getConfigTimezone());
             $dataObj->setData('end_time', $datetime);
         }
 
@@ -288,7 +284,7 @@ class Banner extends \Magento\Backend\Block\Widget\Form\Generic implements \Mage
                 'class' => 'required-entry',
                 'date_format' => $dateFormat,
                 'time_format' => $timeFormat,
-                'note' => implode(' ', [$dateFormat, $timeFormat])
+                'note' => implode (' ', ['dd/mm/aaaa', 'hh:mm'])
             ]
         );
 
@@ -305,7 +301,7 @@ class Banner extends \Magento\Backend\Block\Widget\Form\Generic implements \Mage
                 'class' => 'required-entry',
                 'date_format' => $dateFormat,
                 'time_format' => $timeFormat,
-                'note' => implode(' ', [$dateFormat, $timeFormat])
+                'note' => implode (' ', ['dd/mm/aaaa', 'hh:mm'])
             ]
         );
 

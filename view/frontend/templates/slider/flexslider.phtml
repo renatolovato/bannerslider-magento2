@@ -122,7 +122,7 @@ $bannerCollection = $block->getBannerCollection();
         <strong><span><?php echo $block->escapeHtml($slider->getTitle()); ?></span></strong>
         </div>
     <?php endif; ?>
-    <div class="magestore-bannerslide-flex-slider" style="margin: auto; margin-bottom: 40px;">
+    <div class="magestore-bannerslide-flex-slider" style="margin: 0; padding: 0;">
         <div id="<?php echo $htmlId ?>" class="flexslider flexslider-content-image <?php echo $htmlId ?>" style="margin:auto">
             <ul class="slides">
                 <?php foreach ($bannerCollection as $banner):
@@ -136,9 +136,9 @@ $bannerCollection = $block->getBannerCollection();
                     </li>
                     <?php else :
                     ?>
-                    <li>
+                    <li style="background-image: url('<?php echo $block->getBannerImageUrl($banner) ?>');">
                         <a href="<?php echo $banner->getClickUrl() ?>" target="<?php echo $banner->getTargetValue() ?>" style="display:block;" data-mage-init='{"magestore/clickbanner": {"url": "<?php echo $this->getUrl("bannerslider/index/click") ?>", "slider_id": "<?php echo $banner->getSliderId() ?>", "banner_id": "<?php echo $banner->getId() ?>" }}' >
-                            <img alt="<?php echo $banner->getImageAlt() ?>"  src="<?php echo $block->getBannerImageUrl($banner) ?>"/>
+                            <img alt="<?php echo $banner->getImageAlt() ?>"  src="<?php echo $block->getViewFileUrl('Magestore_Bannerslider::images/banner-square.png')?>"  />
                         </a>
                         <?php if($banner->getCaption()): ?><div class="flex-caption"><?php echo $banner->getCaption(); ?></div><?php endif; ?>
                     </li>
@@ -164,7 +164,47 @@ $bannerCollection = $block->getBannerCollection();
     </div>
 </div>
 <style>
+    .flexslider {
+        box-shadow: none;
+        border-radius: 0;
+        margin: 0;
+        padding: 0;
+    }
     .flex-viewport .slides li{
         margin-bottom: 0px !important;
+    }
+    .flex-control-nav {
+        display: none;
+    }
+    .magestore-bannerslider {
+        width: calc(100%  + 40px);
+        max-height: 526px;
+        overflow: hidden;
+        margin-left: -20px;
+    }
+
+    .magestore-bannerslider-standard {
+        width: 100%;
+        max-height: 100%;
+        height: fit-content !important;
+    }
+
+    .magestore-bannerslide-flex-slider   ul.slides  li {
+        height: fit-content !important;
+        width: 100% !important;
+        background-position: center center;
+        background-size: auto 100%;
+        float: left;
+        position: relative;
+    }
+    .magestore-bannerslide-flex-slider   ul.slides  li a {
+        height: fit-content !important;
+        width: 100% !important;
+    }
+    .magestore-bannerslide-flex-slider   ul.slides  li a img {
+        height: auto !important;
+        width: 100% !important;
+        max-width: 1390px !important;
+        margin: 0 auto !important;
     }
 </style>
